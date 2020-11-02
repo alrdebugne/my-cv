@@ -1,3 +1,5 @@
+README.md for the original LaTeX template that this CV is based on.
+
 # LaTeX resume template
 
 This is the template I use for my own resume. I've forked it from Harsh Gadgil's repository : 
