@@ -1,0 +1,267 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Twenty Seconds Resume/CV
+% LaTeX Template
+% Version 1.0 (14/7/16)
+%
+% Original author:
+% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
+% Vel (vel@LaTeXTemplates.com), Harsh (harsh.gadgil@gmail.com) and johayon
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[letterpaper]{twentysecondcv} % a4paper for A4
+
+\usepackage{tabularx}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%   Overview
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\newcommand\skills{ 
+	~ 
+	\smartdiagram[bubble diagram]{
+		\textbf{Machine}\\\textbf{Learning},
+		\textbf{Optimisation},
+		\textbf{~~~~~~NLP~~~~~~},
+		\textbf{Image}\\\textbf{Processing},
+		\textbf{~~Statistical~~}\\\textbf{Analysis},
+		\textbf{~~Deep~~}\\\textbf{Learning}
+	}
+}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%   Frameworks
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% Smart diagram version (with icons)
+%\tools{
+%	\tikzset{
+%		every shadow/.style={
+%			fill=none,
+%			shadow xshift=0pt,
+%			shadow yshift=0pt}
+%	}
+%	\definecolor{pblue}{HTML}{0395DE}
+%	\smartdiagramset{set color list = {pblue, pblue, pblue, pblue, pblue, pblue, pblue}}
+%	\smartdiagram[descriptive diagram]{
+%		{\large \mfPython, {scikit-learn TensorFlow PySpark Pandas PyMC3}},
+%		{\large \faCogs, {Gurobi \\ CPLEX}}, 
+%		{\large \faDatabase,{PostgreSQL Hive \\ SparkSQL MongoDB}},
+%		{\large \faAreaChart,{Matplotlib Seaborn \\ Tableau \LaTeX}},
+%		{\large \faCompass,{git Airflow \\ Flask Docker}}%
+%	}
+%}
+
+
+% Boxes with header
+\usetikzlibrary{positioning,fit,calc}
+
+\tools{
+	\hspace*{3mm}\vspace*{3mm}
+	\begin{tikzpicture}[
+	box/.style={
+		draw=white, bottom color=pblue, top color=pblue!20!white,
+		rectangle, rounded corners, inner sep=3pt,
+		minimum width=52mm,
+	}
+	]
+		% Machine learning
+		\node [box, align=center] (pythonml) {scikit-learn TensorFlow\\PySpark PyMC3};
+		\node[fit={(pythonml)}] (fitpythonml) {};
+		\node[above right, inner sep=0pt, yshift=-0.4ex] at (fitpythonml.north west) {\textit{Machine learning}};
+		% Optimisation
+		\node [box, align=center] (optim) at (0,-1.45) {Gurobi\\CPLEX};
+		\node[fit={(optim)}] (optim) {};
+		\node[above right, inner sep=0pt, yshift=-0.4ex] at (optim.north west) {\textit{Optimisation}};
+		% Database management
+		\node [box, align=center] (database) at (0,-2.90) {PostgreSQL Hive\\SparkSQL MongoDB};
+		\node[fit={(database)}] (database) {};
+		\node[above right, inner sep=0pt, yshift=-0.5ex] at (database.north west) {\textit{Database}};
+		% Industrialisation
+		\node [box, align=center] (indus) at (0,-4.35) {git pytest Docker\\ Airflow Flask Jenkins};
+		\node[fit={(indus)}] (indus) {};
+		\node[above right, inner sep=0pt, yshift=-0.4ex] at (indus.north west) {\textit{DevOps}};
+		% Visualisation
+		\node [box, align=center] (vis) at (0,-5.80) {matplotlib seaborn \\ Tableau};
+		\node[fit={(vis)}] (vis) {};
+		\node[above right, inner sep=0pt, yshift=-0.4ex] at (vis.north west) {\textit{Visualisation}};
+	\end{tikzpicture}
+}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%   Programming
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% Wheel
+%\programmings{32/materialteal/ \faDatabase \textbf{\textsf{ SQL}},  18/materialcyan/ \textbf{Matlab}, 43/orange/ \ \mfPython \textbf{ Python}, 7/green/ \ \faCode \textbf{ R}}{2.25}{0.75}
+% Same info., in progress bars
+
+% Progress bars
+% Defined in .cls
+
+\usetikzlibrary{shapes.geometric} % for stars in TikZ
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%   Interets
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% Icons version
+%\usepackage{skak} % for printing Chess pieces
+%\interests{ \textcolor{pblue}{\large \faBook \ \ \faCoffee \ \ \faGamepad \ \ \raisebox{-1mm}{\scalebox{0.85}{\footnotesize\BlackKingOnWhite}} 
+%}}
+% Text version
+\interests{%
+	\begin{tabular}{p{6mm} l p{3mm} p{6mm} l}
+		\textcolor{pblue}{\large \faChessBoard} & Board games & & \textcolor{pblue}{\large \faGamepad} & Video games\\
+		\textcolor{pblue}{\large \faPaperPlane[regular]} & Yoga & & \textcolor{pblue}{\large \faLightbulb[regular]} & Meditation
+	\end{tabular}
+}
+
+
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
+
+\cvname{Antoine Debugne, Ph.D.} % Your name
+\cvjobtitle{Data Scientist $\times$ Consultant} % Job
+% title/career
+
+\cvbirthday{26/07/1991} \cvnatio{Belgian} % Personal website
+\cvhome{Paris, FR}  \cvnumberphone{+33 611586489} % Phone number
+\cvmail{alrdebugne@gmail.com} % Email address
+\cvlinkedin{/in/alrdebugne}
+%\cvgithub{}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+	
+	\makeprofile % Print the sidebar
+	
+	
+	%----------------------------------------------------------------------------------------
+	%	 EXPERIENCE
+	%----------------------------------------------------------------------------------------
+	
+	\section{Experience}{\faAlignJustify}
+	
+	\begin{twenty} % Environment for a list with descriptions
+		\twentyitem
+		{2018 - ...}
+		{}
+		{Senior Data Scientist}
+		{The Boston Consulting Group -- GAMMA}
+		{\vspace*{1mm}\textbf{Mission}: implement solutions that creates a lasting competitive advantage for our clients by combining BCG's deep industry expertise with advanced skills in statistics, machine learning and mathematical optimisation.
+		\medskip
+	    }
+		{
+			\textbf{Co-founder of patented engine \textit{Spend AI}}:
+			\begin{itemize}
+				\item Co-founder of \textit{Spend AI}, an accelerator for zero-base-budgeting projects based on NLP, clustering, and self-correcting `human in the loop' techniques.
+				\item Responsible for defining the technical solutions, dev. roadmap and human processes that led to the successful scale-up of \textit{Spend AI}.
+				\item \textit{Spend AI} has since been deployed at ten clients over past 18 months, grossing \$10M in revenue, and helping consultants identify savings potential of 12-20\% of our clients' SG\&A costs (up to \$ 360 M).
+		 	\end{itemize}
+		
+		\medskip
+			
+			\textbf{Other notable projects}:
+			\begin{itemize}
+				\item Optimised the global supply chain for a manufacturer of medical nutrition products through mathematical optimisation  (MIP). Improved scheduling of production unlocked 10M€ of missed sales while avoiding 5M€ of freighting costs during playback. Tool is currently used by 50+ planners and has reduced length of planning cycles from 7 to 3 weeks.
+				\item Redefined CRM strategy for luxury fashion retailer by identifying and activating high-value customers through personalised recommendations. Pilot showed a 100\% increase in revenue per contacted customer \textit{vs} current marketing strategy.
+		\end{itemize}
+	
+		\medskip
+	
+		\textbf{Outreach \& citizenship activities}:
+			\begin{itemize}
+				\item Regular presenter of AI masterclasses to ExCom members and students
+				\item Actively involved in every stage of recruitment process (interviews, talks, workshops, networking events, hackathons...)
+				% \item Author of ... articles for dedicated data science blog 'Gammascope' (\href{https://medium.com/bcggamma}{link})
+			\end{itemize}
+	}
+	
+	\end{twenty}
+	
+	%----------------------------------------------------------------------------------------
+	%	 EDUCATION
+	%----------------------------------------------------------------------------------------
+	\vspace{-0.25cm}
+	\section{Education}{\faGraduationCap}
+	
+	\begin{twenty} % Environment for a list with descriptions
+		\twentyitemshorttest
+		{2014 - 2018}
+		{}
+		{Ph.D. in Environmental Fluid Dynamics}
+		{University of Cambridge}
+		{}
+		
+		\twentyitemshorttest
+		{2010 - 2014}
+		{}
+		{MEng in Civil \& Environmental Engineering}
+		{Imperial College London}
+		{Finished top of class (first-class honours, 83/100). \\Master thesis published in leading peer-reviewed journal.}
+	
+	\end{twenty}
+	
+	\section{Projects - Research}{\faClipboard}
+	\begin{twenty}		
+		\twentyitem
+		{2014 - 2018}
+		{}
+		{Ph.D. thesis}
+		{University of Cambridge}
+		{}
+		{\vspace{-2mm}
+				\begin{itemize}[topsep=0pt,partopsep=0pt]
+				\item \textbf{Title}: \textit{A study of round, line-like and meandering turbulent fountains} (\href{https://www.repository.cam.ac.uk/handle/1810/284881}{link})
+				\item \textbf{Key outcomes}:
+					\begin{itemize}
+						\item[-] Published four research articles in field's leading peer-reviewed journal.
+						\item[-] Developed theoretical models and novel experimental methods to analyse complex, turbulent flows, significantly improving the accuracy and reliability of predictions as a result.
+						%\item[-] Designed two experimental campaigns from scratch \& devised creative approaches to evaluate low-contrast images. {\color{red}{\textit{remove?}}}
+					\end{itemize}					
+		\end{itemize}
+	}
+	
+	\twentyitem
+	{2020 - ...}
+	{}
+	{Oddity}
+	{The Boston Consulting Group -- GAMMA}
+	{}
+	{\vspace{-2mm}
+		\begin{itemize}[topsep=0pt,partopsep=0pt]
+			\item Author of `oddity', a Python package that accelerates the delivery of retail-based use cases (e.g. churn, cross-sell, NBA) by automating feature augmentation. Package has since been incorporated in two flagship products (B2B, TelCo) and deployed on client cases.
+		\end{itemize}
+	}
+	\end{twenty}
+
+	\section{Languages}{\faGlobe}
+	
+	% Stars
+%	\hspace{6mm}
+%	\begin{tabularx}{0.8\columnwidth}{p{20mm} l}
+%		\score{5}{5} & \makebox[0pt][l]{English}\hphantom{German} • French \\
+%		\score{4.5}{5} & German • Luxembourgish \\
+%		\score{2.5}{5} & Spanish
+%	\end{tabularx}
+
+	% Proficiency levels
+	\hspace{6mm}	
+	\begin{tabular}{p{3.5cm} p{5cm}}
+		\textbf{Native (or equiv.)} & French, English \\
+		\textbf{Fluent} & German, Luxembourgish\\
+		\textbf{Conversational} & Spanish
+	\end{tabular}
+
+\end{document} 
