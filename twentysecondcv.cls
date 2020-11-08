@@ -334,7 +334,9 @@
 				\node[box={30mm},label={[label distance=3mm] left:SQL},align=center, anchor=west] (sql)  at (backgroundsql.west) {};
 				\node[background] (backgroundmatlab)  at (0,-1.2) {};
 				\node[box={25mm},label={[label distance=3mm] left:Matlab},align=center, anchor=west] (matlab)  at (backgroundmatlab.west) {};
-				\node[background] (backgroundlatex)  at (0,-1.8) {};
+				\node[background] (backgroundjs)  at (0,-1.8) {};
+				\node[box={10mm},label={[label distance=3mm] left:JavaScript},align=center, anchor=west] (js)  at (backgroundjs.west) {};
+				\node[background] (backgroundlatex)  at (0,-2.4) {};
 				\node[box={20mm},label={[label distance=3mm] left:LaTeX},align=center, anchor=west] (latex)  at (backgroundlatex.west) {};
 		 \end{tikzpicture}
 
